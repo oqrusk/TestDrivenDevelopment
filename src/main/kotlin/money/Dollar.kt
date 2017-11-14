@@ -2,10 +2,10 @@ package money
 
 class Dollar constructor(amount: Int) {
 
-    val amount:Int = 0
+    var amount:Int = amount
 
-    fun times(muliplier: Int) {
-
+    fun times(multiplier: Int) {
+        this.amount *= multiplier
     }
 
 }
