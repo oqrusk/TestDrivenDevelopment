@@ -16,6 +16,7 @@ class DollarTest {
     fun testEquality(){
         assertTrue(Dollar(5) == Dollar(5))
         assertFalse(Dollar(5) == Dollar(6))
+
     }
 }
 
