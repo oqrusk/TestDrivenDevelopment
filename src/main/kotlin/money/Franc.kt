@@ -1,6 +1,6 @@
 package money
 
 
-data class Franc constructor(val amount: Int) {
+data class Franc(override val amount: Int): Money {
     fun times(multiplier: Int) : Franc = Franc(amount * multiplier)
 }
