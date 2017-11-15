@@ -1,9 +1,6 @@
 package money
 
-class Dollar constructor(amount: Int) {
 
-    var amount:Int = amount
-
-    fun times(multiplier: Int) : Dollar? = Dollar(amount * multiplier)
-
+data class Dollar constructor(val amount: Int) {
+    fun times(multiplier: Int) : Dollar = Dollar(amount * multiplier)
 }
