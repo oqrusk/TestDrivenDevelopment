@@ -3,7 +3,7 @@ package money
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 
-class DollarTest {
+class MoneyTest {
 
     @Test
     fun testMultiplication() {
