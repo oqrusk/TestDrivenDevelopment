@@ -1,10 +1,10 @@
 package money
 
 open class Money(amount: Int, currency: String?) {
-    internal var amount: Int = amount
-    internal var currency = currency
+    private var amount: Int = amount
+    private var currency = currency
 
-    open fun times(multiplier: Int): Money? = null
+    fun times(multiplier: Int): Money? = Money(amount * multiplier, currency)
 
     companion object {
         fun dollar(amount: Int): Dollar = Dollar(amount, "USD")
@@ -16,11 +16,9 @@ open class Money(amount: Int, currency: String?) {
         val money = other as? Money ?: return false
 
         return amount == money.amount
-                && javaClass.equals(money.javaClass)
+                && currency.equals(money.currency)
     }
 
     fun currency(): String? = currency
-
-    override fun toString(): String = "Money(amount=$amount, currency=$currency)"
 
 }
