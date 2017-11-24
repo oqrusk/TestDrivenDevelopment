@@ -1,10 +1,12 @@
 package money
 
-open class Money(amount: Int, currency: String?) {
+open class Money(amount: Int, currency: String?) : Expression {
     private var amount: Int = amount
     private var currency = currency
 
-    fun times(multiplier: Int): Money? = Money(amount * multiplier, currency)
+    fun times(multiplier: Int): Money = Money(amount * multiplier, currency)
+
+    fun plus(addend: Money): Expression = Money(amount + addend.amount, currency)
 
     companion object {
         fun dollar(amount: Int): Money = Money(amount, "USD")
