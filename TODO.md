@@ -9,9 +9,9 @@
 - [ ] nullとの等価性比較
 - [ ] 他のオブジェクトとの等価性比較
 - [x] 5CHF * 2 = 10 CHF
-- [ ] DollarとFrancの重複
+- [x] DollarとFrancの重複
 - [x] equals()の一般化
 - [x] times()の一般化
 - [x] FrancとDollarを比較する
 - [x] 通貨の概念
-- [ ] testFrancMultiplicationを削除する？
+- [x] testFrancMultiplicationを削除する？
