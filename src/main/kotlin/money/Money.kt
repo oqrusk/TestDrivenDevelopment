@@ -1,10 +1,10 @@
 package money
 
-abstract class Money(amount: Int, currency: String?) {
+open class Money(amount: Int, currency: String?) {
     internal var amount: Int = amount
-    private var currency = currency
+    internal var currency = currency
 
-    abstract fun times(multiplier: Int): Money
+    open fun times(multiplier: Int): Money? = null
 
     companion object {
         fun dollar(amount: Int): Dollar = Dollar(amount, "USD")
@@ -20,4 +20,7 @@ abstract class Money(amount: Int, currency: String?) {
     }
 
     fun currency(): String? = currency
+
+    override fun toString(): String = "Money(amount=$amount, currency=$currency)"
+
 }
