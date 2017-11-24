@@ -1,7 +1,9 @@
 package money
 
-open class Money(amount: Int) {
+abstract class Money(amount: Int) {
     internal var amount: Int = amount
+
+    abstract fun times(multiplier: Int): Money
 
     companion object {
         fun dollar(amount: Int): Dollar = Dollar(amount)
