@@ -1,7 +1,5 @@
 package money
 
-class Franc constructor(amount: Int) : Money(amount, "CHF") {
-
-    override fun times(multiplier: Int): Money = Franc(amount * multiplier)
-
+class Franc constructor(amount: Int, currency: String?) : Money(amount, currency) {
+    override fun times(multiplier: Int): Money = Money.franc(amount * multiplier)
 }

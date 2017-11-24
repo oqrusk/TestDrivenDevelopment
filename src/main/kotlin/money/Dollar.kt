@@ -1,5 +1,5 @@
 package money
 
-class Dollar constructor(amount: Int) : Money(amount, "USD") {
-    override fun times(multiplier: Int): Money = Dollar(amount * multiplier)
+class Dollar constructor(amount: Int, currency: String) : Money(amount, currency) {
+    override fun times(multiplier: Int): Money = Money.dollar(amount * multiplier)
 }

@@ -2,13 +2,13 @@ package money
 
 abstract class Money(amount: Int, currency: String?) {
     internal var amount: Int = amount
-    protected var currency = currency
+    private var currency = currency
 
     abstract fun times(multiplier: Int): Money
 
     companion object {
-        fun dollar(amount: Int): Dollar = Dollar(amount)
-        fun franc(amount: Int): Franc = Franc(amount)
+        fun dollar(amount: Int): Dollar = Dollar(amount, "USD")
+        fun franc(amount: Int): Franc = Franc(amount, "CHF")
 
     }
 
