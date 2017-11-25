@@ -1,6 +1,6 @@
 package money
 
-open class Money(amount: Int, currency: String?) : Expression {
+open class Money(amount: Int, currency: String) : Expression {
 
     internal var amount: Int = amount
     internal var currency = currency
@@ -14,7 +14,10 @@ open class Money(amount: Int, currency: String?) : Expression {
 
     fun plus(addend: Money): Expression = Sum(this, addend)
 
-    override fun reduce(to: String): Money = this
+    override fun reduce(bank: Bank, to: String): Money {
+        val rate = bank.rate(currency, to)
+        return Money(amount!! / rate!!, to)
+    }
 
     override fun equals(other: Any?): Boolean {
         val money = other as? Money ?: return false
