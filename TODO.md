@@ -4,8 +4,8 @@
 - [x] Bank.reduce(Money)
 - [x] Moneyを変換して換算を行う
 - [x] Reduce
-- [ ] Sum.plus
-- [ ] Expression.times
+- [x] Sum.plus
+- [x] Expression.times
  
 - [ ] Moneyの丸め処理どうする?
 - [ ] hashCode()

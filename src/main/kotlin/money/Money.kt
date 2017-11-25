@@ -10,7 +10,7 @@ open class Money(amount: Int, currency: String) : Expression {
         fun franc(amount: Int): Money = Money(amount, "CHF")
     }
 
-    fun times(multiplier: Int): Expression = Money(amount * multiplier, currency)
+    override fun times(multiplier: Int): Expression = Money(amount * multiplier, currency)
 
     override fun plus(addend: Expression): Expression = Sum(this, addend)
 

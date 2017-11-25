@@ -1,9 +1,8 @@
 package money
 
 class Sum(augend: Expression, addend: Expression) : Expression {
-    override fun plus(addend: Expression): Expression {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+    override fun plus(addend: Expression): Expression = Sum(this, addend)
+
 
     internal var augend: Expression = augend
     internal var addend: Expression = addend
@@ -12,4 +11,7 @@ class Sum(augend: Expression, addend: Expression) : Expression {
         val amount: Int = augend.reduce(bank, to).amount + addend.reduce(bank, to).amount
         return Money(amount, to)
     }
+
+    override fun times(multiplier: Int): Expression = Sum(augend.times(multiplier), addend.times(multiplier))
+
 }
